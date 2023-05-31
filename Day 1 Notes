@@ -75,3 +75,96 @@ Order of Evaluation of a command
     Way to tell somethign where to look
     ~ is the users home directory
 8) Error
+    Last thing that happens if it doesnt know what to do
+    
+BRACE EXPANSION
+    ls {BASH,SSH,ZIP}
+    will ls each of the options in the brace expansions
+    
+    some commands support brace expansions
+    
+    touch file{1...10}.log will create files with name file1.log to file10.log
+    
+FILE SYSTEM & MANIPULATION
+  
+    Absolute, home, and relative File references
+      home dir: ~/ or $HOME
+      abs path: /etc/passwd
+      rel path: ./ or ..
+      
+    FileSystem Cmds
+      -touch: touch -t [[CC]YY]MMDDhhmm[.ss]
+      -mkdir: mkdir -p
+      -rm: rm -rf
+      -rmdir: rmdir -p
+      -ls: ls -lisa
+      -cd: cd -
+    Links
+      
+      Symbolic -> pointer or shortcut
+      Hard Link -> creates new memory location to run that program
+      
+Processes and Memory
+
+  Anything that runs in bash is a process
+  
+  ps - see running processes
+  kill -9 1234
+  killall killallfirefox
+  
+  less -> line by line, man pages default to less command, more user friendly
+  more -> 
+  
+  cat will print everything to screen
+  
+  Finding Files
+    find: find / 
+        -d "for depth" 
+        -maxdepth, also supports tests
+        -mtime *n last 24, supports
+        -name "patern" example (*.bin)
+        -executable
+        -exec {} ; 'command you wont to find the"
+        -printf "format" %p filename %U user ID
+        
+        find -(i)name "name"
+        find -inum for indoe location
+        find / -type -d,f,p
+        find / -type s -exec echo {} 2>/dev/null \;
+        find / -mtime "2" days ago
+        find / -cmin -30 
+        find / -amin -30 accessed
+        find / -mmin -60 modified
+        find / -empty 'nothing in the files'
+        
+    locate:
+        find where something is installed
+    whereis:
+        whereis 'executable'
+        where it is stored
+    which:
+        which bash
+        shows more about the file
+        
+    GREP
+      grep - print line smatching a pattern
+      can grep a string out of a file
+      dont need wildcards in grep
+      
+      grep "pattern" man.txt
+      'dont expand variable'
+      "does expand variable"
+      grep -C "amount of lines above and below"
+      grep -A "print precedidng three lines"
+      grep -B "print following three lines:
+      grep -n "line number"
+      grep -o " -" filen ame
+      grep -c " : count of pattern
+      grep -c -v "intevert what you see"
+      grep -E or egrep to look for regex patterns
+      egrep "student|root|bob" /etc/passwd
+      
+CUT COMMAND
+    remove something out of an output
+    tail /etc/passwd | cut -d: f6 -d delim, field 6-7 --output-delimter="SUS"
+    
