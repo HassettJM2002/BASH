@@ -139,7 +139,7 @@ Processes and Memory
         find / ! -name 'every name you dont want to find'
         find / -name "" ! -name -exec cp  {} ~/dir \;
         find /var -empty -printf %i' '%f\\n
-        
+        find / -inum 4026532575 -printf %f\\n 2>/dev/null
         
         
         
