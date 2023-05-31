@@ -174,3 +174,24 @@ CUT COMMAND
     remove something out of an output
     tail /etc/passwd | cut -d: f6 -d delim, field 6-7 --output-delimter="SUS"
     
+    
+Activities    
+  Example 1)
+    mkdir 11{23,32,45,56}
+  Example 2)
+    touch {{1..5},{5..0}~}.txt
+  Example 2)
+    find ~/directory/*.txt or find ~/directory -iname "*.txt"
+  Example 3)
+    find ~/directory -iname ".txt" ! -iname "*~*"
+  Example 5)
+    ind ~/directory -iname ".txt" ! -iname "*~*" -exec cp {} $HOME/CUT \;
+    cp ~/directory/*[^~].txt /directory
+  Example 6)
+    find /var -printf '%i %f\n'
+  Example 7)
+    find / -num 999 -printf "%f\n" 2>/dev/null
+  Example 8
+    ls -l | cut -d. -f1-2 -s | cut -d: -f2 | cut-d' ' -f2
+  Example 7)
+  Example 7)
