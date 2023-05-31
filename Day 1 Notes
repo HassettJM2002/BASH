@@ -136,6 +136,7 @@ Processes and Memory
         find / -amin -30 accessed
         find / -mmin -60 modified
         find / -empty 'nothing in the files'
+        find / ! -name 'every name you dont want to find'
         
     locate:
         find where something is installed
