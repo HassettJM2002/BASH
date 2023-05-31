@@ -1,0 +1,77 @@
+Shell is an interface to talk to the computer
+Goal is to reach multiple programs automatically
+
+Bash is the most common shell
+
+CTRL P down
+CTRL N is up
+CTRL A takes to start of a line
+CTRL E gets to the end
+CTRL U deletes the whole line
+CTRL L clears the screen
+
+history to see history of all comands
+to do a specific command do !<line number>
+
+To get help
+use the man <command>
+G to move to end of man page
+g to move to the beginning of the man page
+
+/pattern search forwards
+?pattern search backward
+&pattern displays only matthing lines
+n or shift n 
+q quit man page
+
+bash views everything as a string
+
+it is a case senstive language
+
+Tootls to look stuff up
+  Explainshell.com
+  
+curl - client url request, can grab a webpage
+curl cht.sh/'command' pulls up examples of how to use the command
+manpages.org for man pages
+
+Order of Evaluation of a command
+1) redirection '>' take stdout and redirect to a file, 
+    '>' overwrites
+    '>>' appends
+    1> stdout is default
+    2> stderror
+    0> stdin
+2)  Alias 
+    You can create alias
+    Alias goes before the actual command
+    writing alias
+        alias alias='command'
+        unalas 'command'
+3)
+    () represents subshell, child shell, temps dont get opened in that shell
+    $() runs a command in a subhsell
+    (()) creates arithmeitc subshell, bash doesn't do math, evalutes ASCII, must tell bash to do math
+    test if [] tests conditional
+    [[]] can use expr features for expressions, more variable arguments, its better than the regulat []
+    {} designed for grouping of characters, allows to run multiple options at the same time
+4) Shell functions
+    Can make functions
+    assing a piece of code for reuse 
+     'funcname'() { code }
+    find out what a command is 
+        type -a 'types / options assigned to the command' 
+        unset 'function'
+    functions and aliases are temporary, only exist in that shell by default
+    
+5) Built in commands
+    are built into bash, do no have man pages, help "built in command"
+   
+6) Hash Tables
+    Temporary cache
+    commands are stored in hash table, references hash table
+    
+7) Path Variables
+    Way to tell somethign where to look
+    ~ is the users home directory
+8) Error
