@@ -138,6 +138,8 @@ Processes and Memory
         find / -empty 'nothing in the files'
         find / ! -name 'every name you dont want to find'
         find / -name "" ! -name -exec cp  {} ~/dir \;
+        find /var -empty -printf %i' '%f\\n
+        
         
         
         
