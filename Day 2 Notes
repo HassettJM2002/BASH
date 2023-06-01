@@ -1,0 +1,22 @@
+################
+Day 2 Notes
+################
+awk / gawk :
+    used for pattern matching and processing language
+    useful for formatting after going through a lot of data
+    awk uses variable amount of whitespace as a delimter, way more dvanced as cut
+    
+Example 1:
+
+awk '{print}' 'file name' --> will print all the files in a document, same as cat
+awk '/latte. {print}' 'filename' --> will print every line that has latte in it, prints anything with a line that matches the pattern
+
+Example 2:
+  file with banes store and salary
+    
+    mike manager store 450000
+
+  awk '{print $1,4}' 'filename'
+  will output
+  
+    mike 450000
