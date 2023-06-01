@@ -116,3 +116,35 @@ else
     echo "41 is not < 8";
 fi
 
+
+scripting
+
+#!/bin/bash
+if [[ banana != apple ]]; then : do not use -ne, only use for numbers
+    echo "banana is not apple"
+else
+    echo "Banana IS an apple"
+    
+#!/bin/bash
+if [[ 41 -ne 50 ]]; tthen, strings use symbols, numbers use letters
+    echo "yeahhhh"
+else
+    echo "NOOOO"
+fi
+chmod + x 'file' to make the file executable
+
+##########
+alias
+##########
+    alias -p : shows all set alias
+    alias nano='vim'
+    put them in profile to make it perminent
+    
+####################
+Command Substitution
+####################
+
+    A=$(tail /etc/passwd)
+    echo $A, executes command and then echos the output to the screen
+    
+    
