@@ -86,5 +86,33 @@ sed : stream editor
             sed '5 s/crazy/coffee/' beststuff.txt
             
 ############
-
+uniq : reports or omits repeated lines, shows how often something occurs
 ############
+        -i(case insensitivie)
+        
+        file with duplicate lines
+        
+        must sort it to have a true count of unique comparisons
+        
+        sort 'filename' | uniq -c (count how many repeated lines)
+        
+        uniq -d (count how many repeated lines) -> shows all repeated lines
+        uniq -D (shows all lines that ar erepated)
+        
+        sort  'file' | uniq -i -> sorts it then finds all the duplictes
+        
+##############
+conditional operators
+##############
+
+if [[ -f /etc/passwd ]];then
+    echo
+elif [[ ! ]];
+fi
+        
+if [[ 41 -lt 8 ]];then
+    echo "41 < 8"
+else
+    echo "41 is not < 8";
+fi
+
