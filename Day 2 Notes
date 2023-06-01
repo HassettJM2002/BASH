@@ -85,6 +85,8 @@ sed : stream editor
             sed '"line#,line#" s/tea/coffee/g(entirelines)' 'filename'
             sed '5 s/crazy/coffee/' beststuff.txt
             
+        Example: sed '/\/bin\/sh/d' $HOME/passwd
+            
 ############
 uniq : reports or omits repeated lines, shows how often something occurs
 ############
