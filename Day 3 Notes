@@ -33,7 +33,7 @@ Example 5)
   delete this pattern
   
   
-  sed '/\bin\/false/d;/\/bin\/sh/d' passwd
+  sed '/\bin\/false/d;/\/bin\/sh/d' passwd > $HOME/PASS/passwd.txt
   
   can do multiple delete pattersn in one line
   
