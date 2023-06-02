@@ -1,1 +1,9 @@
+Example 2)
 
+awk -F: '($3 > 3) && ($NF == "/bin/bash") {print $1}' > $HOME/SED/names.txt
+
+  -F: -> field delimiter is :
+  '($3 > 3) && $NF == "/bin/bash"' : will only print 1st field if field 3 is greater than 3
+  > $HOME/SED/names.txt : outputting it to a file, overwrites or creates a new one
+  
+Example 3) 
