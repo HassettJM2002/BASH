@@ -138,8 +138,9 @@ Variable Substitution
         name="John"
         echo "My name is ${name:0:2}"
     }
-    fun1
-    fun2
-    fun3
-    fun4
-    fun5
+    fun1 -> John
+    fun2 -> My name is John "double quotes"
+    fun3 -> mMy name is $name "single quotes"
+    fun4 -> My name is -> assumes with no space that there is a variable, but variable wasnt named
+            My name is Johnny5 -> with brace expansion can be used to call variable
+    fun5 -> My name is jo, grabbed field 0 up to but not including 2
