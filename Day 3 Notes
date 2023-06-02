@@ -42,3 +42,8 @@ Example 5)
   sed -e '/\bin\/false/d' -e '/\/bin\/sh/d' passwd
   
   to do multiple patterns in one
+
+
+In bash context, parameter is an entity that stores a value
+parameters can be variables, number, or special characeter
+
