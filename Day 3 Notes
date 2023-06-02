@@ -6,4 +6,39 @@ awk -F: '($3 > 3) && ($NF == "/bin/bash") {print $1}' > $HOME/SED/names.txt
   '($3 > 3) && $NF == "/bin/bash"' : will only print 1st field if field 3 is greater than 3
   > $HOME/SED/names.txt : outputting it to a file, overwrites or creates a new one
   
-Example 3) 
+Example 3)
+  dmesg | egrep "CPU|BIOS" | egrep -iv "usable|reserved" cut -d] -f2-
+    
+      | egrep "CPU|BIOS" -> finds all lines with CPU or BIOS in it
+      | egrep -iv "usable|reserved" -> removes all lines with usable or reserved
+       cut -d] -f2- : will cut on the delimter ']' and will print all files 2 to the end
+
+Example 4)
+  
+  a=$(openssl passwd -1 Password1234 -salt bad4u)
+    openssl -> encryption method
+    passwd -1 'Password' -> md5 hashed password
+    -salt 'salt' -> the salt of the password
+    
+  awk -F -v "awk_var" '{OFS=":"} {$2=awk_var; print}' /etc/passwd
+    
+    awk -F: -> field separator ':'
+    -v: variable import, declare it at the start 
+    '{OFS=":"}' -> output field separator will be colon
+    {$2=awk_var; print} -> the semi colon is equal to newline
+    
+Example 5)
+
+  sed '/ /d'
+  delete this pattern
+  
+  
+  sed '/\bin\/false/d;/\/bin\/sh/d' passwd
+  
+  can do multiple delete pattersn in one line
+  
+  or 
+  
+  sed -e '/\bin\/false/d' -e '/\/bin\/sh/d' passwd
+  
+  to do multiple patterns in one
