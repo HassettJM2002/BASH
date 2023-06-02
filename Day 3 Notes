@@ -47,3 +47,61 @@ Example 5)
 In bash context, parameter is an entity that stores a value
 parameters can be variables, number, or special characeter
 
+Bash Parameters, specifically variables
+
+Variables ar eparameters set with a name identifier on the left or an equal sigth and value, no spaces in variables
+
+    var_a="Hello World"
+    another_var=42
+    
+    echo $var_a
+      Hello World
+      
+    var_a= "Hello World" -> will error out
+    
+Special Parameters
+  $# number of args passed
+  $0 - represents script name
+  $i -> the ith argument in parameter, $1 or $2
+  $* -> Parameter gives all arguments passed to the shell script separated by the4 space
+  $! -> gives PID of the last background running process
+  $? Exist status of last command executed
+  $_ last arguement 
+  $$ PID of current shell
+  $- current flags set in your shell
+  
+Functions:
+allow to break code up into manageblae blocks
+create a func, call it, use it, boom!
+
+contain variables, loops, can return values
+
+making func doesn;t call it, have to call it
+
+Example of a func
+"{}" brackets open the function body and close it
+  myfunc() {
+  echo Hello I am a function
+  #This is a comment in my function
+  }
+  
+ to reference a function call it by name "myfunc"
+ 
+ function print_me { echo HELLO! }
+ reference it print_me
+
+#!/bin/bash
+  function getuser()
+  {
+      echo "make a choice [1,2,3]:"
+      read userchoice
+      case $userchoice in
+        (1) echo one ;;
+        (2) echo two ;;
+        (3) echo three ;;
+        (*) echo other ;;
+      esac
+  }
+  getuser
+  
+  case -> like an if statement, close it by write case backwards
