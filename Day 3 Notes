@@ -105,3 +105,41 @@ Example of a func
   getuser
   
   case -> like an if statement, close it by write case backwards
+
+Variable Substitution
+
+    #!/bin/bash
+    
+    fun1(){
+        #Simple Variable Substitution
+        name="John"
+        echo $name
+    }
+    
+    fun2() {
+        #Var Sub within double quotes
+        name="Jon"
+        echo "My name is $name"
+    }
+    
+    fun3() {
+        #Var sub within single quotes
+        name="John"
+        echo 'My name is $name'
+    }
+    fun4() {
+        #CUrly braces to separate variables
+        name="John"
+        echo "My name is $name5"
+        echo "My name is ${name}ny5"
+    }
+    fun5() {
+        # Curl braces and values to sub
+        name="John"
+        echo "My name is ${name:0:2}"
+    }
+    fun1
+    fun2
+    fun3
+    fun4
+    fun5
