@@ -1,1 +1,24 @@
-
+Bash Activities
+Number 11)
+    find $HOME -name "*.bin" | awk 'BEGIN {FS="/";OFS="/"}{NF=NF-1}{print $0}' | sort -u
+    
+    sort -u --> sorts uniquely
+    
+Number 12)
+    #!/bin/bash
+    name=$2
+    ugid=$3
+    file=$1
+    base=$(tail -1 $file)
+    echo $base | awk -F: -v "awkname=$name" -v "awkugid=$ugid" -v 'BEGIN {OFS=":"} {$1=awkname; $3=awkugid; $4=awkugid; $6="/home/awkname"; $7="/bin/bash"} {print $0}' >> $file
+    
+Number 13)
+     md5sum $(find /bin  /sbin /usr/bin /usr/sbin -executable -type 5 | sort -u | head -10 | tail -1) | cut =d'' -f1
+     
+Number 14)
+    sort -t: -k4n /etc/passwd | awk -F: 'NR==10 {print $6}' | md5sum | awk '{print $1}'
+    
+    sort -t: -k4n
+    sorted fourth coloum numerically and the saparator is the colon
+    
+Number 15)
