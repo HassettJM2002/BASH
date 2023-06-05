@@ -34,3 +34,57 @@ Number 15)
         else
             echo "oops"; -maxdepth 3
     fi
+
+
+######################################
+Loops
+######################################
+while - while expression is true
+until - execute until something becomes true
+for - for every item in a loop
+
+####################################
+For Loops
+####################################
+Example
+for x in {list}
+do
+    echo $x
+done
+
+for x in $(cat 'file')
+do 
+    echo $x
+done
+for x in $(cat /etc/passwd | awk -F: '{print $1}')
+    do echo $x is a user on this system
+    done
+    
+    
+##############################################
+while loops
+##############################################
+syntax of a while loop
+
+    
+#!/bin/bash
+while [ test ]
+do
+    commands
+done
+
+$a=0
+while [ $a -lt 10 ]
+do
+    echo $a
+    a=`expr $a + 1`
+    or ((a++)) --> evaluation/arithemtic equation uses double quotes, ++ increments by one
+done
+
+a=0
+until [ $a -gt 10 ]
+    do
+        echo $a
+        a=`expr $a + 1`
+    done
+
