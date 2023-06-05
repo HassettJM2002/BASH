@@ -22,3 +22,15 @@ Number 14)
     sorted fourth coloum numerically and the saparator is the colon
     
 Number 15)
+    mkdir $HOME/HASHES
+    find /bin /etc /var -maxdepth 3 ! - type p -exec md5sum {} > $HOME/HASHESfail \;
+    
+    A=$(wc -l $HOME/HASHES/success | awk '{print $1}')
+    B=$(grep -c "Is a directory" $HOME/HASHES/fail)
+    if [[ "$A" ]];
+        then
+            echo "Successfully Hashes Files: "$A";
+            echo "Unsuccessfully hashes Directories: $B:"
+        else
+            echo "oops"; -maxdepth 3
+    fi
