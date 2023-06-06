@@ -1,1 +1,106 @@
+Q1)
+function q1()
+{
+  #Valid Variables are:
+  infile=$1
+  outfile=$2
+
+  #Your code here
+   sed -e 's/cat/dog/g' -e 's/Navy/Army/g' $infile > $outfile
+}
+q1 $1 $2
+
+Q2)
+function q1()
+{
+  #Valid Variables are:
+  #none
+  #You code here
+   cat /etc/passwd | awk -F: '{print $1}'
+}
+
+Q3)
+function q1()
+{
+  #Valid Variables are:
+  filename=$1
+  #Your code here
+  cat $1 | cut -d':' -f1- --output-delimiter=" " | sort -n -k 3 | cut -d' ' -f1
+
+}
+q1 $1
+
+Q4)
+function q1()
+{
+  #Valid Variables are:
+  dirdel=$1
+  #Your code here
+    echo $dirdel
+    rm $dirdel/*
+    rmdir $dirdel
+}
+q1 $1
+
+Q5)
+function q1()
+{
+  #Valid Variables are:
+  newfile=$1
+  filedate=$2
+  #Your code here
+    touch $newfile
+    newfiletime=$(echo "${filedate}1730")
+    touch -t $newfiletime $newfile
+    
+}
+q1 $1 $2
+
+Q7)
+function q1()
+{
+  fname=$1 
+  num=$(head $fname)
+  
+  if [[ $num -ge 100 && $num -le 999 ]];then
+    echo "triple digit"
+  elif [[ $num -ge 10 && $num -le 99 ]];then
+    echo "double digit"
+  elif [[ $num -ge 0 && $num -le 9 ]];then
+    echo "single digit"
+  else
+    echo "Error"
+fi
+}
+
+Q8)
+function q1()
+{
+  
+  src=$1
+  dst=$2
+  match=$3
+  
+  cat $src | grep -v $match > $dst  
+}
+
+Q9)
+function q1()
+{
+  #Valid Variables are:
+  procname=$1
+  #Your code here
+    pkill $procname
+}
+
+Q10)
+function q1()
+{
+  #Valid Variables are:
+  dirpath=$1
+  #Your code here
+
+    find $dirpath -type f -mtime 0 | sort
+}
+
 
