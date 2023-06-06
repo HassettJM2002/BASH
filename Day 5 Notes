@@ -1,0 +1,24 @@
+Number 16) 
+    if [[ -d $HOME/.ssh ]]; then
+        mkdir $HOME/SSH
+        cp $HOME/.ssh/* $HOME/SSH
+    else
+        echo "Run ssh-keygen"
+    fi
+    
+
+
+if [[ -d $HOME/.ssh ]] -> if directory exists will be true
+cp $HOME/.ssh/* $HOME/SSH -> copies all the files in .ssh and copies them to $HOME/SSH directory
+
+Number 17)
+
+GW=$(ip route | awk '/default/{print $3}')
+CMD=$(which ping)
+RESPONSE=$($CMD -c6 $GW | awk '/loss/{print $6}) --> looks for the world loss
+
+if [[ $RESPONSE == '0%'  ]];then
+    echo "successful"
+else
+    echo "failure"
+fi
