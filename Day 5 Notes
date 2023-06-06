@@ -22,3 +22,47 @@ if [[ $RESPONSE == '0%'  ]];then
 else
     echo "failure"
 fi
+
+Number 18)
+
+    mkdir $HOME/ZIP
+    echo "12345" | md5sum | cut -d" " -f1 > file1
+    echo "6789" | md5sum | cut -d" " -f1 > file2
+    echo "abcdef" | md5sum | cut -d" " -f1 > file2
+
+    zip -j {dest} {files to zip}
+    zip -j $HOME/ZIP/file.zip $HOME/ZIP/file{1..3}
+    
+    tar -czf {dest} {files to zip} -C{change directory}
+    tar -czf $HOME/ZIP/file.tar.gz -C $HOME/ZIP/ file.zip
+    check a file with file {filename}
+    
+Number 19)
+    
+        rootline=$( head -l $HOME/passwd )
+        for x in {LARRY,CURLY,MOE}; do
+                myuid=$(cat $HOME/${x}.txt)
+                mkdir $HOME/$x
+                echo $rootline | awk -F: -v un=$x -v ui=$myuid 'BEGIN{OFS=":"}{$1=un;$3=$4=$ui;$6="$HOME/"un} {print $0}' >> $HOME/passwd
+        done
+        
+Number 20)
+        #!/bin/bash
+        find /etc -printf '%m\n' 2>/dev/null > initial.del
+        for octal in $(cat initial.del)
+        do
+        if [[ $octal -ge 642]]; then
+            echo "$octal" >> high.del
+        elif [[ $octal -le 640 ]]; then
+            echo "$octal" >> low.del
+        fi
+        done
+        echo "Files w/ OCTAL Perm Values 642+"
+        cat high.del | sort | uniq -c | sort -nr
+        echo
+        echo "Files w/ OCTAL Perm Vlaues 0-640:"
+        cat low.del | sort | uniq - c | sort -nr
+        
+        rm *.del
+
+-printf '%m\n' -> prints the otctal permissions
